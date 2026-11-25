@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ah1310.github.io/nabd-al-iqtisad/sitemap.xml
