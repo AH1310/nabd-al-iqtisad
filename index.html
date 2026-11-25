@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" data-theme="dark">
 <head>
 
   <meta name="google-site-verification" content="dAm6GwZDQtr9YN0xFLqTTOUlaSXzf4nBLq04B5ooqww" />
@@ -26,40 +26,153 @@ content="تابع أسعار العملات والذهب والفضة والوق
 content="https://ah1310.github.io/nabd-al-iqtisad/">
 
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="نبض الاقتصاد">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:image" content="https://ah1310.github.io/nabd-al-iqtisad/icon-512.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="نبض الاقتصاد | أسعار العملات والذهب والوقود">
+<meta name="twitter:description" content="تابع أسعار العملات والذهب والفضة والوقود والطاقة في مكان واحد.">
+<meta name="twitter:image" content="https://ah1310.github.io/nabd-al-iqtisad/icon-512.png">
 
+<meta name="theme-color" id="themeColor" content="#050d17">
+<meta name="application-name" content="نبض الاقتصاد">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="نبض الاقتصاد">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="./icon-512.png">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
 
-  
-<meta name="theme-color" content="#06111f">
+<script>
+/* تطبيق الوضع المحفوظ قبل الرسم لمنع الوميض */
+(function(){
+  var t;
+  try{
+    t=localStorage.getItem("nabd_theme");
+    if(t!=="light"&&t!=="dark"){
+      t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";
+    }
+  }catch(e){t="dark"}
+  document.documentElement.setAttribute("data-theme",t);
+  var m=document.getElementById("themeColor");
+  if(m)m.setAttribute("content",t==="light"?"#edf2f7":"#050d17");
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"WebSite",
+      "name":"نبض الاقتصاد",
+      "url":"https://ah1310.github.io/nabd-al-iqtisad/",
+      "inLanguage":"ar",
+      "description":"موقع لمعرفة أسعار الذهب والوقود وصرف العملات."
+    },
+    {
+      "@type":"WebApplication",
+      "name":"نبض الاقتصاد",
+      "url":"https://ah1310.github.io/nabd-al-iqtisad/",
+      "applicationCategory":"FinanceApplication",
+      "operatingSystem":"Any",
+      "inLanguage":"ar",
+      "author":{
+        "@type":"Person",
+        "name":"AH13",
+        "url":"https://ahmedhafezfrontend-ah13.netlify.app/"
+      }
+    }
+  ]
+}
+</script>
 
 <style>
-:root{
+:root,:root[data-theme="dark"]{
   color-scheme:dark;
   --bg:#050d17;
-  --bg2:#081626;
   --panel:#0b1b2d;
   --panel2:#10263d;
   --line:rgba(255,255,255,.075);
   --text:#f5f9fc;
   --muted:#839caf;
-  --blue:#1d91ff;
+  --muted2:#9ab0c1;
+  --soft:#a8bdcd;
   --cyan:#3cd5ff;
   --green:#27d78a;
   --gold:#f1c64a;
-  --red:#ff6378;
+  --link:#63bdff;
+  --surface:#071827;
+  --surface2:#10283f;
+  --hero1:#102b46;
+  --hero2:#091a2b;
+  --hdr:rgba(5,13,23,.88);
+  --nav:rgba(8,22,38,.94);
+  --d1:#0b1d30;
+  --d2:#06111e;
+  --ok:#99ebc5;
+  --note:#f1d377;
+  --bad:#ff91a1;
+  --mkt:#83cdff;
+  --nt:#c9bea0;
+  --tl1:#123d63;
+  --tl2:#0d2943;
+  --sk1:rgba(255,255,255,.06);
+  --sk2:rgba(255,255,255,.14);
+  --glow1:rgba(22,132,255,.15);
+  --glow2:rgba(35,215,138,.07);
   --shadow:0 20px 60px rgba(0,0,0,.34);
+}
+:root[data-theme="light"]{
+  color-scheme:light;
+  --bg:#edf2f7;
+  --panel:#ffffff;
+  --panel2:#f3f7fb;
+  --line:rgba(12,40,72,.13);
+  --text:#0c1b2b;
+  --muted:#5a7084;
+  --muted2:#4d647a;
+  --soft:#3d566d;
+  --cyan:#0a6fd1;
+  --green:#0f9d63;
+  --gold:#b98a00;
+  --link:#0a63c9;
+  --surface:#f4f8fc;
+  --surface2:#e4edf6;
+  --hero1:#ffffff;
+  --hero2:#e6f0fb;
+  --hdr:rgba(237,242,247,.92);
+  --nav:rgba(255,255,255,.96);
+  --d1:#ffffff;
+  --d2:#eef4fa;
+  --ok:#0d7a4a;
+  --note:#8a6500;
+  --bad:#c0233b;
+  --mkt:#0b5fb8;
+  --nt:#6b5a1f;
+  --tl1:#d6e8fa;
+  --tl2:#c4dcf3;
+  --sk1:rgba(12,40,72,.06);
+  --sk2:rgba(12,40,72,.14);
+  --glow1:rgba(22,132,255,.1);
+  --glow2:rgba(35,215,138,.06);
+  --shadow:0 16px 40px rgba(20,50,90,.12);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
   min-height:100vh;
+  padding-bottom:calc(86px + env(safe-area-inset-bottom));
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,Arial,sans-serif;
   font-size:16px;
   line-height:1.6;
   color:var(--text);
   background:
-    radial-gradient(circle at 85% 0%,rgba(22,132,255,.15),transparent 28%),
-    radial-gradient(circle at 3% 25%,rgba(35,215,138,.07),transparent 25%),
+    radial-gradient(circle at 85% 0%,var(--glow1),transparent 28%),
+    radial-gradient(circle at 3% 25%,var(--glow2),transparent 25%),
     var(--bg);
 }
 a{color:inherit;text-decoration:none}
@@ -71,37 +184,43 @@ button:disabled{opacity:.6;cursor:wait}
 
 .header{
   position:sticky;top:0;z-index:1000;
+  padding-top:env(safe-area-inset-top);
   backdrop-filter:blur(18px);
-  background:rgba(5,13,23,.88);
+  background:var(--hdr);
   border-bottom:1px solid var(--line);
 }
 .header-inner{
   max-width:1280px;margin:auto;height:72px;
-  display:flex;align-items:center;gap:13px;padding:0 18px;
+  display:flex;align-items:center;gap:10px;padding:0 18px;
 }
-.menu-button{
-  width:46px;height:46px;flex-shrink:0;
+.icon-button{
+  min-width:46px;height:46px;flex-shrink:0;padding:0 12px;
   border:1px solid var(--line);border-radius:15px;
-  background:linear-gradient(145deg,#0e253d,#091827);
+  background:var(--surface2);color:var(--text);
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  font-size:19px;transition:.2s;
+}
+.icon-button:hover{border-color:rgba(29,145,255,.55);transform:translateY(-1px)}
+.icon-button .label{font-size:13px;font-weight:700}
+.menu-button{
+  width:46px;height:46px;flex-shrink:0;padding:0;
+  border:1px solid var(--line);border-radius:15px;
+  background:var(--surface2);
   display:flex;flex-direction:column;
   align-items:center;justify-content:center;gap:5px;
   transition:.2s;
 }
-.menu-button:hover{
-  border-color:rgba(29,145,255,.55);
-  transform:translateY(-1px);
-}
-.menu-button span{
-  width:21px;height:2px;border-radius:10px;background:#fff;
-}
+.menu-button:hover{border-color:rgba(29,145,255,.55);transform:translateY(-1px)}
+.menu-button span{width:21px;height:2px;border-radius:10px;background:var(--text)}
 .brand,.drawer-brand{display:flex;align-items:center;gap:10px}
+.brand{min-width:0}
 .brand-icon{
   width:43px;height:43px;flex-shrink:0;border-radius:14px;
   display:grid;place-items:center;font-size:21px;
   background:linear-gradient(135deg,#0878f5,#41c9ff);
   box-shadow:0 9px 25px rgba(0,128,255,.28);
 }
-.brand-name{font-size:17px;font-weight:900}
+.brand-name{font-size:17px;font-weight:900;white-space:nowrap}
 .brand-sub{margin-top:2px;font-size:12px;color:var(--muted)}
 .header-space{flex:1}
 .ah13-top{
@@ -109,12 +228,9 @@ button:disabled{opacity:.6;cursor:wait}
   padding:7px 11px 7px 8px;overflow:hidden;border-radius:17px;
   border:1px solid rgba(42,158,255,.28);
   background:linear-gradient(135deg,rgba(18,101,191,.24),rgba(47,202,255,.08));
-  transition:.25s;
+  transition:.25s;flex-shrink:0;
 }
-.ah13-top:hover{
-  transform:translateY(-2px);
-  border-color:rgba(65,190,255,.7);
-}
+.ah13-top:hover{transform:translateY(-2px);border-color:rgba(65,190,255,.7)}
 .ah13-logo{
   width:39px;height:39px;flex-shrink:0;border-radius:12px;
   display:grid;place-items:center;color:#07101b;
@@ -122,7 +238,7 @@ button:disabled{opacity:.6;cursor:wait}
   font-size:12px;font-weight:900;
 }
 .ah13-text strong{display:block;font-size:11px}
-.ah13-text span{display:block;margin-top:2px;font-size:12px;color:#8bbce5}
+.ah13-text span{display:block;margin-top:2px;font-size:12px;color:var(--link)}
 
 .overlay{
   position:fixed;inset:0;z-index:1990;
@@ -134,9 +250,9 @@ button:disabled{opacity:.6;cursor:wait}
   position:fixed;top:0;right:-350px;z-index:2000;
   width:min(340px,88vw);height:100vh;height:100dvh;
   padding:22px 17px;overflow-y:auto;
-  background:linear-gradient(180deg,#0b1d30,#06111e);
+  background:linear-gradient(180deg,var(--d1),var(--d2));
   border-left:1px solid var(--line);
-  box-shadow:-20px 0 60px rgba(0,0,0,.45);
+  box-shadow:-20px 0 60px rgba(0,0,0,.35);
   transition:right .32s ease;
 }
 .drawer.open{right:0}
@@ -146,13 +262,13 @@ button:disabled{opacity:.6;cursor:wait}
 }
 .drawer-close{
   width:38px;height:38px;border:1px solid var(--line);
-  border-radius:12px;background:#102438;color:#fff;font-size:20px;
+  border-radius:12px;background:var(--surface2);color:var(--text);font-size:20px;
 }
 .menu-list{margin-top:22px;display:flex;flex-direction:column;gap:9px}
 .menu-link{
-  display:flex;align-items:center;gap:12px;padding:14px 13px;
-  border:1px solid transparent;border-radius:16px;
-  color:#dce7ef;background:rgba(255,255,255,.025);transition:.2s;
+  display:flex;align-items:center;gap:12px;padding:14px 13px;width:100%;
+  border:1px solid transparent;border-radius:16px;text-align:right;
+  color:var(--text);background:var(--chipbg,rgba(127,150,175,.08));transition:.2s;
 }
 .menu-link:hover{
   background:rgba(28,144,255,.1);
@@ -161,27 +277,25 @@ button:disabled{opacity:.6;cursor:wait}
 }
 .menu-link-icon{
   width:38px;height:38px;flex-shrink:0;border-radius:12px;
-  display:grid;place-items:center;background:#10283f;
+  display:grid;place-items:center;background:var(--surface2);
   border:1px solid var(--line);font-size:17px;
 }
-.menu-link strong{font-size:14px}
-.menu-link small{
-  display:block;color:var(--muted);font-size:12px;margin-top:3px;
-}
+.menu-link strong{font-size:14px;display:block}
+.menu-link small{display:block;color:var(--muted);font-size:12px;margin-top:3px}
 .developer-menu{
   margin-top:20px;padding:16px;border-radius:19px;
   border:1px solid rgba(44,158,255,.22);
   background:linear-gradient(135deg,rgba(19,103,188,.18),rgba(44,200,255,.05));
 }
 .developer-row{display:flex;align-items:center;gap:10px}
-.developer-row small{display:block;color:#86a8c1;font-size:12px}
+.developer-row small{display:block;color:var(--muted);font-size:12px}
 
-.container{max-width:1280px;margin:auto;padding:24px 18px 60px}
-.hero{display:grid;grid-template-columns:1.45fr .72fr;gap:16px}
+.container{max-width:1280px;margin:auto;padding:24px 18px 30px}
+.hero{display:grid;grid-template-columns:1.45fr .72fr;gap:16px;scroll-margin-top:95px}
 .hero-main,.hero-side{
   position:relative;overflow:hidden;border:1px solid var(--line);
   border-radius:29px;
-  background:linear-gradient(145deg,#102b46,#091a2b);
+  background:linear-gradient(145deg,var(--hero1),var(--hero2));
   box-shadow:var(--shadow);
 }
 .hero-main{min-height:300px;padding:32px}
@@ -193,8 +307,8 @@ button:disabled{opacity:.6;cursor:wait}
 .hero-live{
   position:relative;display:inline-flex;align-items:center;gap:7px;
   padding:7px 11px;border-radius:999px;
-  border:1px solid rgba(39,215,138,.2);
-  background:rgba(39,215,138,.06);color:#99ebc5;font-size:12px;
+  border:1px solid rgba(39,215,138,.25);
+  background:rgba(39,215,138,.07);color:var(--ok);font-size:12px;
 }
 .live-dot{
   width:8px;height:8px;flex-shrink:0;display:inline-block;
@@ -207,46 +321,45 @@ button:disabled{opacity:.6;cursor:wait}
 }
 .hero-main p{
   position:relative;max-width:700px;margin-top:15px;
-  color:#a8bdcd;line-height:1.9;font-size:14px;
+  color:var(--soft);line-height:1.9;font-size:14px;
 }
 .hero-actions{
   position:relative;margin-top:24px;
   display:flex;gap:10px;flex-wrap:wrap;
 }
 .primary-button,.secondary-button{
-  border-radius:14px;padding:12px 17px;color:#fff;
+  border-radius:14px;padding:12px 17px;color:var(--text);
+  display:inline-flex;align-items:center;gap:6px;
 }
 .primary-button{
-  border:0;background:linear-gradient(135deg,#0b6fe4,#269fff);
+  border:0;color:#fff;background:linear-gradient(135deg,#0b6fe4,#269fff);
   box-shadow:0 10px 25px rgba(14,119,230,.26);
 }
-.secondary-button{border:1px solid var(--line);background:#10283f}
+.secondary-button{border:1px solid var(--line);background:var(--surface2)}
 .hero-side{padding:20px}
 .hero-side-title{font-size:14px;margin-bottom:10px}
 .side-row{
   display:flex;align-items:center;justify-content:space-between;
-  gap:10px;padding:15px 0;border-bottom:1px solid var(--line);
+  gap:10px;padding:13px 0;border-bottom:1px solid var(--line);
 }
 .side-row:last-child{border-bottom:0}
 .side-row strong{font-size:14px}
-.side-row small{
-  display:block;margin-top:3px;color:var(--muted);font-size:12px;
-}
+.side-row small{display:block;margin-top:3px;color:var(--muted);font-size:12px}
 select,input{
-  min-width:0;outline:none;border:1px solid rgba(255,255,255,.1);
-  border-radius:12px;padding:10px 11px;color:#fff;background:#071827;
+  min-width:0;outline:none;border:1px solid var(--line);
+  border-radius:12px;padding:10px 11px;color:var(--text);background:var(--surface);
 }
-select:focus,input:focus{border-color:rgba(33,150,255,.55)}
+select:focus,input:focus{border-color:rgba(33,150,255,.6)}
 
 .ticker{
   margin-top:17px;min-height:51px;border:1px solid var(--line);
-  border-radius:17px;overflow:hidden;background:#071725;
+  border-radius:17px;overflow:hidden;background:var(--surface);
   display:flex;align-items:center;
 }
 .ticker-label{
   align-self:stretch;display:flex;align-items:center;
   padding:0 15px;font-size:11px;font-weight:800;min-width:max-content;
-  background:linear-gradient(135deg,#123d63,#0d2943);
+  background:linear-gradient(135deg,var(--tl1),var(--tl2));
 }
 .ticker-content{
   min-width:0;padding:10px 18px;display:flex;gap:28px;overflow:auto;
@@ -262,7 +375,7 @@ select:focus,input:focus{border-color:rgba(33,150,255,.55)}
 .section-header p{margin-top:4px;color:var(--muted);font-size:12px}
 .source-label{
   padding:7px 10px;border:1px solid var(--line);border-radius:999px;
-  background:rgba(255,255,255,.025);color:#9eb5c6;font-size:12px;
+  background:rgba(127,150,175,.07);color:var(--muted2);font-size:12px;
   overflow-wrap:anywhere;max-width:100%;
 }
 .grid{
@@ -272,99 +385,109 @@ select:focus,input:focus{border-color:rgba(33,150,255,.55)}
   position:relative;overflow:hidden;min-height:137px;padding:16px;
   border-radius:21px;border:1px solid var(--line);
   background:linear-gradient(145deg,var(--panel2),var(--panel));
-  box-shadow:0 12px 30px rgba(0,0,0,.15);transition:.2s;
+  box-shadow:0 12px 30px rgba(0,0,0,.12);transition:.2s;
 }
-.card:hover{
-  transform:translateY(-2px);border-color:rgba(54,156,245,.23);
-}
+.card:hover{transform:translateY(-2px);border-color:rgba(54,156,245,.3)}
 .card:after{
   content:"";position:absolute;width:100px;height:100px;
   border-radius:50%;left:-50px;bottom:-55px;
   background:rgba(31,143,255,.08);pointer-events:none;
 }
-.gold-card{border-color:rgba(241,198,74,.16)}
+.gold-card{border-color:rgba(241,198,74,.2)}
 .gold-card:after{background:rgba(241,198,74,.09)}
-.fuel-card{border-color:rgba(39,215,138,.13)}
+.fuel-card{border-color:rgba(39,215,138,.16)}
 .card-top{
   display:flex;justify-content:space-between;align-items:flex-start;gap:6px;
 }
 .card-icon{
   width:39px;height:39px;flex-shrink:0;border-radius:12px;
   display:grid;place-items:center;font-size:18px;
-  background:rgba(255,255,255,.05);border:1px solid var(--line);
+  background:rgba(127,150,175,.1);border:1px solid var(--line);
 }
 .card-code{
   padding:5px 7px;border-radius:999px;
-  background:rgba(255,255,255,.04);color:#93aabd;font-size:10px;
+  background:rgba(127,150,175,.1);color:var(--muted2);font-size:10px;
 }
-.card-name{margin-top:13px;color:#9ab0c1;font-size:14px}
+.card-name{margin-top:13px;color:var(--muted2);font-size:14px}
 .card-value{
   margin-top:5px;font-size:23px;font-weight:900;overflow-wrap:anywhere;
 }
-.card-sub{margin-top:7px;color:#839caf;font-size:12px}
+.card-sub{margin-top:7px;color:var(--muted);font-size:12px}
+.currency-tools{display:flex;gap:10px;margin-bottom:12px}
+.currency-tools input{flex:1}
 .currency-grid{
   display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;
 }
 .currency-card{
-  min-width:0;padding:14px;border-radius:18px;border:1px solid var(--line);
-  background:linear-gradient(145deg,#0d2237,#091827);
+  position:relative;min-width:0;padding:14px;border-radius:18px;border:1px solid var(--line);
+  background:linear-gradient(145deg,var(--panel2),var(--panel));
   display:flex;align-items:center;gap:12px;transition:.2s;
 }
-.currency-card:hover{
-  transform:translateY(-2px);border-color:rgba(32,146,255,.26);
-}
+.currency-card:hover{transform:translateY(-2px);border-color:rgba(32,146,255,.3)}
 .currency-flag{
   width:43px;height:43px;flex-shrink:0;display:grid;place-items:center;
-  border-radius:13px;background:rgba(255,255,255,.045);font-size:22px;
+  border-radius:13px;background:rgba(127,150,175,.1);font-size:22px;
 }
 .currency-info{min-width:0;flex:1}
 .currency-name{font-size:14px;font-weight:700}
 .currency-code{
   margin-top:2px;color:var(--muted);font-size:12px;overflow-wrap:anywhere;
 }
-.currency-code a{color:#63bdff}
+.currency-code a{color:var(--link)}
 .currency-price{
   text-align:left;font-size:16px;font-weight:900;overflow-wrap:anywhere;
 }
+.fav-button{
+  position:absolute;top:6px;left:8px;border:0;background:none;
+  color:var(--muted);font-size:17px;line-height:1;padding:4px;
+}
+.fav-button.on{color:var(--gold)}
+.empty-state{
+  grid-column:1/-1;padding:22px;text-align:center;color:var(--muted);
+  border:1px dashed var(--line);border-radius:18px;
+}
 
-.converter{
+.converter,.tool-box{
   margin-top:16px;padding:19px;border-radius:22px;
   border:1px solid var(--line);
-  background:linear-gradient(145deg,#0e2339,#081724);
+  background:linear-gradient(145deg,var(--panel2),var(--panel));
   scroll-margin-top:95px;
 }
-.converter h3{margin-bottom:16px}
+.converter h3,.tool-box h3{margin-bottom:16px}
 .converter-grid{
   display:grid;
   grid-template-columns:minmax(0,.8fr) minmax(0,1fr) 54px minmax(0,1fr);
   gap:10px;align-items:end;
 }
-.field{min-width:0}
-.field label{
-  display:block;margin-bottom:6px;color:var(--muted);font-size:12px;
+.gold-calc-grid{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;
 }
+.field{min-width:0}
+.field label{display:block;margin-bottom:6px;color:var(--muted);font-size:12px}
 .field input,.field select{width:100%}
 .swap-button{
   width:54px;height:46px;border:1px solid var(--line);
-  border-radius:13px;background:#102b45;color:#fff;font-size:18px;
+  border-radius:13px;background:var(--surface2);color:var(--text);font-size:18px;
 }
 .converter-result{
   margin-top:13px;min-height:65px;border:1px solid var(--line);
-  border-radius:16px;background:#061522;display:flex;
+  border-radius:16px;background:var(--surface);display:flex;
+  flex-direction:column;gap:4px;
   align-items:center;justify-content:center;padding:14px;
   text-align:center;font-weight:900;font-size:19px;overflow-wrap:anywhere;
 }
+.converter-result small{font-size:12px;font-weight:400;color:var(--muted)}
 .metadata{
   display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:14px;
   padding:12px 14px;border:1px solid var(--line);border-radius:14px;
-  color:#9ab0c1;background:#071725;font-size:12px;
+  color:var(--muted2);background:var(--surface);font-size:12px;
   overflow-wrap:anywhere;
 }
-.metadata a{color:#63bdff;text-decoration:underline}
-.official{color:#99ebc5;border-color:#27d78a55;background:#27d78a12}
-.warning{color:#f1d377;border-color:#f1c64a55;background:#f1c64a10}
-.unavailable{color:#ff91a1;border-color:#ff637855;background:#ff637810}
-.market{color:#83cdff;border-color:#1d91ff55}
+.metadata a{color:var(--link);text-decoration:underline}
+.official{color:var(--ok);border-color:#27d78a55;background:#27d78a12}
+.note{color:var(--note);border-color:#f1c64a55;background:#f1c64a10}
+.unavailable{color:var(--bad);border-color:#ff637855;background:#ff637810}
+.market{color:var(--mkt);border-color:#1d91ff55}
 .source-category{margin-top:16px}
 .source-category h3{font-size:14px;margin-bottom:10px}
 .sources-grid{
@@ -372,30 +495,124 @@ select:focus,input:focus{border-color:rgba(33,150,255,.55)}
 }
 .source-card{
   min-height:112px;padding:14px;border:1px solid var(--line);
-  border-radius:17px;background:#091a2a;
+  border-radius:17px;background:var(--surface);
 }
 .source-card strong{display:block;font-size:13px}
-.source-card p{
-  margin-top:6px;color:var(--muted);font-size:12px;line-height:1.7;
-}
-.source-card a{
-  display:inline-block;margin-top:8px;color:#63bdff;font-size:12px;
-}
+.source-card p{margin-top:6px;color:var(--muted);font-size:12px;line-height:1.7}
+.source-card a{display:inline-block;margin-top:8px;color:var(--link);font-size:12px}
 .notice{
   margin-top:14px;padding:12px 14px;border-radius:15px;
-  border:1px solid rgba(241,198,74,.14);
-  background:rgba(241,198,74,.045);
-  color:#c9bea0;font-size:12px;line-height:1.8;
+  border:1px solid rgba(241,198,74,.2);
+  background:rgba(241,198,74,.06);
+  color:var(--nt);font-size:12px;line-height:1.8;
 }
 footer{
-  margin-top:50px;padding:24px 15px;text-align:center;
-  border-top:1px solid var(--line);color:#839caf;font-size:13px;
+  margin-top:30px;padding:24px 15px 30px;text-align:center;
+  border-top:1px solid var(--line);color:var(--muted);font-size:13px;
 }
-footer a{color:#63bdff}
+footer a{color:var(--link)}
+footer p+p{margin-top:6px}
 .footer-notice{
-  max-width:900px;margin:0 auto 16px;
-  color:#9eb3c5;line-height:1.9;font-size:14px;
+  max-width:900px;margin:18px auto 0;padding:14px 16px;
+  border:1px solid var(--line);border-radius:16px;background:var(--surface);
+  color:var(--muted2);line-height:1.9;font-size:13px;
 }
+
+/* الشريط السفلي */
+.bottom-nav{
+  position:fixed;left:0;right:0;bottom:0;z-index:1500;
+  display:flex;justify-content:space-around;gap:2px;
+  padding:7px 6px calc(7px + env(safe-area-inset-bottom));
+  background:var(--nav);backdrop-filter:blur(18px);
+  border-top:1px solid var(--line);
+  transition:transform .25s ease;
+}
+.nav-item{
+  flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:2px;
+  padding:6px 2px;border:0;background:none;color:var(--muted);
+  font-size:11px;font-weight:700;border-radius:14px;transition:.2s;
+}
+.nav-item .ni{font-size:21px;line-height:1.1}
+.nav-item.active{color:var(--cyan);background:rgba(29,145,255,.13)}
+body.kb .bottom-nav{transform:translateY(120%)}
+@media(min-width:700px){
+  .bottom-nav{
+    left:50%;right:auto;transform:translateX(-50%);
+    width:min(560px,92vw);bottom:14px;border-radius:22px;
+    border:1px solid var(--line);box-shadow:var(--shadow);
+  }
+  body.kb .bottom-nav{transform:translateX(-50%)}
+}
+
+/* النوافذ السفلية */
+.sheet-wrap{
+  position:fixed;inset:0;z-index:2100;
+  display:flex;align-items:flex-end;justify-content:center;
+  background:rgba(0,0,0,.6);backdrop-filter:blur(4px);
+}
+.sheet{
+  width:min(440px,100%);max-height:96vh;max-height:96dvh;overflow:auto;
+  background:var(--panel);border:1px solid var(--line);
+  border-radius:26px 26px 0 0;
+  padding:16px 16px calc(18px + env(safe-area-inset-bottom));
+  animation:sheetUp .25s ease;
+}
+@keyframes sheetUp{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
+@media(min-width:700px){
+  .sheet-wrap{align-items:center}
+  .sheet{border-radius:26px}
+}
+.sheet-head{
+  display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;
+}
+.sheet-head h3{font-size:17px}
+.sheet p{color:var(--soft);font-size:14px;line-height:1.9}
+.sheet ol{margin:10px 18px 0;color:var(--soft);font-size:14px;line-height:2}
+
+/* الآلة الحاسبة */
+.calc-screen{
+  direction:ltr;text-align:right;padding:12px 14px;margin-bottom:12px;
+  border:1px solid var(--line);border-radius:18px;background:var(--surface);
+}
+.calc-history{
+  display:flex;flex-direction:column;gap:2px;min-height:96px;
+  justify-content:flex-end;margin-bottom:6px;
+}
+.calc-history button{
+  border:0;background:none;color:var(--muted);text-align:right;
+  font-size:14px;padding:2px 0;overflow-wrap:anywhere;
+}
+.calc-history button:hover{color:var(--cyan)}
+.calc-history .none{color:var(--muted);font-size:12px;text-align:center;padding:4px}
+.calc-expr{
+  min-height:40px;font-size:32px;font-weight:800;overflow-wrap:anywhere;line-height:1.25;
+}
+.calc-preview{min-height:20px;color:var(--muted);font-size:14px}
+.calc-tools{display:flex;justify-content:flex-start;margin-bottom:10px}
+.calc-tools button{
+  border:1px solid var(--line);background:var(--surface2);color:var(--muted2);
+  padding:6px 12px;border-radius:999px;font-size:12px;
+}
+.keys{direction:ltr;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.key{
+  height:58px;border-radius:16px;border:1px solid var(--line);
+  background:var(--surface2);color:var(--text);font-size:22px;font-weight:700;
+}
+.key:active{transform:scale(.96)}
+.key.op{background:rgba(29,145,255,.16);color:var(--cyan)}
+.key.fn{color:var(--bad)}
+.key.eq{border:0;color:#fff;background:linear-gradient(135deg,#0b6fe4,#269fff)}
+.key.zero{grid-column:span 2}
+
+/* حالة التحميل */
+body.loading .card-value,
+body.loading .currency-price{
+  width:70%;color:transparent!important;border-radius:8px;user-select:none;
+  background:linear-gradient(90deg,var(--sk1),var(--sk2),var(--sk1));
+  background-size:200% 100%;animation:sk 1.2s infinite linear;
+}
+@keyframes sk{to{background-position:-200% 0}}
+
 @media(max-width:1000px){
   .hero{grid-template-columns:1fr}
   .grid,.currency-grid,.sources-grid{
@@ -403,18 +620,20 @@ footer a{color:#63bdff}
   }
 }
 @media(max-width:650px){
-  .header-inner{height:64px;padding:0 10px;gap:8px}
+  .header-inner{height:64px;padding:0 10px;gap:7px}
   .brand-name{font-size:16px}
-  .brand-sub,.ah13-text{display:none}
+  .brand-sub,.ah13-text,.icon-button .label{display:none}
+  .icon-button{min-width:42px;height:42px;padding:0}
+  .menu-button{width:42px;height:42px}
   .ah13-top{padding:5px}
   .ah13-logo{width:36px;height:36px}
-  .container{padding:14px 11px 45px}
+  .container{padding:14px 11px 24px}
   .hero-main{min-height:280px;padding:22px}
   .hero h1{font-size:36px}
   .grid{gap:8px}
   .card{min-height:124px;padding:12px;border-radius:18px}
   .card-value{font-size:20px}
-  .currency-grid,.sources-grid,.converter-grid{grid-template-columns:1fr}
+  .currency-grid,.sources-grid,.converter-grid,.gold-calc-grid{grid-template-columns:1fr}
   .currency-card{gap:10px}
   .swap-button{width:100%}
   .section-header{align-items:flex-start;flex-direction:column}
@@ -422,16 +641,10 @@ footer a{color:#63bdff}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  *{transition:none!important}
+  *{transition:none!important;animation:none!important}
 }
 </style>
 
-
-<link rel="manifest" href="./manifest.json">
-<link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="./icon-512.png">
-<meta name="theme-color" content="#102a43">
-  
 </head>
 
 <body>
@@ -458,7 +671,7 @@ footer a{color:#63bdff}
       <div class="menu-link-icon">🔄</div>
       <div>
         <strong>تحويل العملات</strong>
-        <small>تحويل بين العملات المحددة</small>
+        <small>تحويل بين العملات المتاحة</small>
       </div>
     </a>
     <a href="#currencies" class="menu-link drawer-link">
@@ -479,9 +692,23 @@ footer a{color:#63bdff}
       <div class="menu-link-icon">🥇</div>
       <div>
         <strong>الذهب والفضة</strong>
-        <small>أسعار سوقية مرجعية</small>
+        <small>أسعار سوقية مرجعية وحاسبة ذهب</small>
       </div>
     </a>
+    <button type="button" id="drawerCalc" class="menu-link">
+      <div class="menu-link-icon">🧮</div>
+      <div>
+        <strong>الآلة الحاسبة</strong>
+        <small>عمليات حسابية مع سجل آخر ٥ عمليات</small>
+      </div>
+    </button>
+    <button type="button" id="drawerInstall" class="menu-link">
+      <div class="menu-link-icon">📲</div>
+      <div>
+        <strong>تثبيت التطبيق</strong>
+        <small>أضف الموقع إلى شاشتك الرئيسية</small>
+      </div>
+    </button>
     <a href="#sources" class="menu-link drawer-link">
       <div class="menu-link-icon">🔗</div>
       <div>
@@ -518,7 +745,7 @@ footer a{color:#63bdff}
       <span></span><span></span><span></span>
     </button>
 
-    <a href="#" class="brand">
+    <a href="#home" class="brand" id="brandLink">
       <div class="brand-icon">📊</div>
       <div>
         <div class="brand-name">نبض الاقتصاد</div>
@@ -527,6 +754,16 @@ footer a{color:#63bdff}
     </a>
 
     <div class="header-space"></div>
+
+    <button id="installButton" class="icon-button" type="button"
+            aria-label="تثبيت التطبيق" title="تثبيت التطبيق">
+      <span aria-hidden="true">📲</span><span class="label">تثبيت</span>
+    </button>
+
+    <button id="themeButton" class="icon-button" type="button"
+            aria-label="تبديل الوضع الليلي والنهاري" title="تبديل الوضع">
+      <span id="themeIcon" aria-hidden="true">🌙</span>
+    </button>
 
     <a href="https://ahmedhafezfrontend-ah13.netlify.app/"
        target="_blank" rel="noopener noreferrer" class="ah13-top">
@@ -540,7 +777,7 @@ footer a{color:#63bdff}
 </header>
 
 <main class="container">
-  <section class="hero">
+  <section id="home" class="hero">
     <div class="hero-main">
       <div class="hero-live">
         <span class="live-dot"></span>
@@ -554,6 +791,7 @@ footer a{color:#63bdff}
       <div class="hero-actions">
         <button id="refreshButton" class="primary-button">↻ تحديث الأسعار</button>
         <a href="#currencies" class="secondary-button">💱 العملات</a>
+        <button id="shareButton" class="secondary-button" type="button">💬 مشاركة واتساب</button>
       </div>
     </div>
 
@@ -581,6 +819,13 @@ footer a{color:#63bdff}
           <small id="lastUpdate">—</small>
         </div>
         <div><span id="countdown">300</span> ث</div>
+      </div>
+
+      <div class="side-row">
+        <div>
+          <strong>آخر أسعار ناجحة</strong>
+          <small id="lastSuccess">—</small>
+        </div>
       </div>
 
       <div class="side-row">
@@ -660,6 +905,12 @@ footer a{color:#63bdff}
         <p>قيمة وحدة واحدة من كل عملة بالعملة المحلية</p>
       </div>
       <div id="currencySource" class="source-label">—</div>
+    </div>
+
+    <div class="currency-tools">
+      <input id="currencySearch" type="search"
+             placeholder="🔍 ابحث عن عملة بالاسم أو الرمز"
+             aria-label="بحث في العملات" autocomplete="off">
     </div>
 
     <div id="currencyGrid" class="currency-grid"></div>
@@ -783,6 +1034,34 @@ footer a{color:#63bdff}
       </div>
     </div>
 
+    <div id="extraMetals" class="grid" style="margin-top:12px" hidden></div>
+
+    <div class="tool-box" id="goldCalc">
+      <h3>🧾 حاسبة الذهب</h3>
+      <div class="gold-calc-grid">
+        <div class="field">
+          <label for="gcWeight">الوزن (جرام)</label>
+          <input id="gcWeight" type="number" min="0" step="any"
+                 value="10" inputmode="decimal">
+        </div>
+        <div class="field">
+          <label for="gcKarat">العيار</label>
+          <select id="gcKarat">
+            <option value="24">عيار 24</option>
+            <option value="22">عيار 22</option>
+            <option value="21" selected>عيار 21</option>
+            <option value="18">عيار 18</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="gcMaking">المصنعية للجرام (<span id="gcCur">ج.م</span>)</label>
+          <input id="gcMaking" type="number" min="0" step="any"
+                 value="0" inputmode="decimal">
+        </div>
+      </div>
+      <div id="gcResult" class="converter-result" role="status" aria-live="polite">—</div>
+    </div>
+
     <div class="notice">
       الذهب والفضة محسوبان من السعر العالمي وسعر الصرف المرجعي؛
       قد يختلفان عن أسعار السوق المحلية، ولا يشملان المصنعية والضريبة.
@@ -816,8 +1095,8 @@ footer a{color:#63bdff}
 
     <div class="notice">
       رسمي: قراءة من مصدر رسمي.
-      تحذير: قد يكون المصدر تجاريًا، أو تاريخ السعر غير متاح،
-      أو البيانات محفوظة من قراءة سابقة.
+      مصدر تجاري أو قراءة محفوظة: قد يكون المصدر تجاريًا، أو تاريخ السعر
+      غير متاح، أو البيانات محفوظة من قراءة سابقة.
       غير متاح: تعذرت القراءة.
       طلب البيانات كل 5 دقائق لا يعني تغير الأسعار؛ قد يعيد المزود
       قراءة محفوظة لمدة ساعة للوقود وست ساعات للعملات.
@@ -831,8 +1110,10 @@ footer a{color:#63bdff}
   <section class="section">
     <h3>الخصوصية</h3>
     <p class="notice">
-      لا يطلب الموقع بياناتك الشخصية. يُحفظ اختيار الدولة على جهازك فقط،
-      ولا يستخدم الموقع أدوات لقياس الزيارات.
+      لا يطلب الموقع بياناتك الشخصية. تُحفظ على جهازك فقط تفضيلاتك
+      (الدولة والوضع الليلي أو النهاري والعملات المفضلة وسجل الآلة الحاسبة)
+      وآخر أسعار تم تحميلها لعرضها عند انقطاع الاتصال، ولا يستخدم الموقع
+      أدوات لقياس الزيارات.
     </p>
   </section>
 
@@ -844,20 +1125,96 @@ footer a{color:#63bdff}
 </main>
 
 <footer>
-  <p class="footer-notice">
-    جميع الأسعار المعروضة على موقع «نبض الاقتصاد» أسعار استرشادية
-    تقريبية مستمدة من مصادر مفتوحة، وقد تختلف عن الأسعار الفعلية
-    وقت التعامل. تُقدَّم هذه البيانات لأغراض المعلومات العامة،
-    ولا تُعدّ توصية مالية أو تجارية. ولا يتحمل الموقع مسؤولية
-    القرارات أو النتائج المترتبة على الاعتماد عليها.
-  </p>
   <p>© <span id="copyrightYear">2026</span> نبض الاقتصاد. جميع الحقوق محفوظة.</p>
   <p>
     تصميم وتطوير
     <a href="https://ahmedhafezfrontend-ah13.netlify.app/"
        target="_blank" rel="noopener noreferrer">AH13</a>
   </p>
+  <p class="footer-notice">
+    موقع «نبض الاقتصاد» مخصص لعرض أسعار الذهب والوقود وصرف العملات
+    لأغراض معلوماتية فقط، والأسعار استرشادية تقريبية مستمدة من مصادر
+    مفتوحة وقد تختلف عن الأسعار الفعلية وقت التعامل. الموقع غير مسؤول
+    عن أي معاملات تجارية أو مالية، أو أي قرارات تُتخذ بناءً على هذه
+    البيانات، ولا يُعدّ توصية مالية أو تجارية.
+  </p>
 </footer>
+
+<!-- الشريط السفلي -->
+<nav id="bottomNav" class="bottom-nav" aria-label="التنقل السريع">
+  <button type="button" class="nav-item" data-target="home">
+    <span class="ni">🏠</span><span>الرئيسية</span>
+  </button>
+  <button type="button" class="nav-item" data-target="currencies">
+    <span class="ni">💱</span><span>العملات</span>
+  </button>
+  <button type="button" class="nav-item" data-target="gold">
+    <span class="ni">🥇</span><span>الذهب</span>
+  </button>
+  <button type="button" class="nav-item" data-target="fuel">
+    <span class="ni">⛽</span><span>الوقود</span>
+  </button>
+  <button type="button" class="nav-item" id="navCalc">
+    <span class="ni">🧮</span><span>الحاسبة</span>
+  </button>
+</nav>
+
+<!-- الآلة الحاسبة -->
+<div id="calcSheet" class="sheet-wrap" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-label="الآلة الحاسبة">
+    <div class="sheet-head">
+      <h3>🧮 الآلة الحاسبة</h3>
+      <button id="calcClose" class="drawer-close" aria-label="إغلاق">×</button>
+    </div>
+
+    <div class="calc-screen">
+      <div id="calcHistory" class="calc-history"></div>
+      <div id="calcExpr" class="calc-expr">0</div>
+      <div id="calcPreview" class="calc-preview"></div>
+    </div>
+
+    <div class="calc-tools">
+      <button id="calcClearHistory" type="button">🗑 مسح السجل</button>
+    </div>
+
+    <div class="keys" id="calcKeys">
+      <button class="key fn" data-k="AC">AC</button>
+      <button class="key fn" data-k="DEL" aria-label="حذف">⌫</button>
+      <button class="key op" data-k="%">%</button>
+      <button class="key op" data-k="÷">÷</button>
+
+      <button class="key" data-k="7">7</button>
+      <button class="key" data-k="8">8</button>
+      <button class="key" data-k="9">9</button>
+      <button class="key op" data-k="×">×</button>
+
+      <button class="key" data-k="4">4</button>
+      <button class="key" data-k="5">5</button>
+      <button class="key" data-k="6">6</button>
+      <button class="key op" data-k="−">−</button>
+
+      <button class="key" data-k="1">1</button>
+      <button class="key" data-k="2">2</button>
+      <button class="key" data-k="3">3</button>
+      <button class="key op" data-k="+">+</button>
+
+      <button class="key zero" data-k="0">0</button>
+      <button class="key" data-k=".">.</button>
+      <button class="key eq" data-k="=">=</button>
+    </div>
+  </div>
+</div>
+
+<!-- شرح التثبيت -->
+<div id="installSheet" class="sheet-wrap" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-label="تثبيت التطبيق">
+    <div class="sheet-head">
+      <h3>📲 تثبيت نبض الاقتصاد</h3>
+      <button id="installClose" class="drawer-close" aria-label="إغلاق">×</button>
+    </div>
+    <div id="installBody"></div>
+  </div>
+</div>
 
 <script>
 "use strict";
@@ -866,6 +1223,7 @@ footer a{color:#63bdff}
 const WORKER_URL =
   "https://nabdaliktisaad.ah10med2013.workers.dev";
 
+const SITE_URL = "https://ah1310.github.io/nabd-al-iqtisad/";
 const REFRESH_SECONDS = 300;
 
 const COUNTRY_META = {
@@ -894,6 +1252,15 @@ const CURRENCY_META = {
   JPY:["الين الياباني","🇯🇵"]
 };
 
+/* أعلام عملات إضافية تظهر فقط إذا أرسلها المزود */
+const EXTRA_FLAGS = {
+  TRY:"🇹🇷",INR:"🇮🇳",PKR:"🇵🇰",CAD:"🇨🇦",AUD:"🇦🇺",RUB:"🇷🇺",
+  MAD:"🇲🇦",DZD:"🇩🇿",TND:"🇹🇳",LYD:"🇱🇾",IQD:"🇮🇶",LBP:"🇱🇧",
+  SYP:"🇸🇾",SDG:"🇸🇩",YER:"🇾🇪",KRW:"🇰🇷",SEK:"🇸🇪",NOK:"🇳🇴",
+  DKK:"🇩🇰",SGD:"🇸🇬",MYR:"🇲🇾",IDR:"🇮🇩",ZAR:"🇿🇦",BRL:"🇧🇷",
+  MXN:"🇲🇽",NZD:"🇳🇿",HKD:"🇭🇰",THB:"🇹🇭"
+};
+
 const TRACKED_CURRENCIES = Object.keys(CURRENCY_META);
 const $ = id => document.getElementById(id);
 
@@ -905,6 +1272,13 @@ const escapeHTML = value =>
     '"':"&quot;",
     "'":"&#39;"
   }[character]));
+
+/* إزالة كلمة التحذير من أي نص قادم من المزود */
+const clean = value =>
+  String(value ?? "")
+    .replace(/تحذيرات?\s*[:：]?/g,"")
+    .replace(/\s{2,}/g," ")
+    .trim();
 
 const valid = value =>
   (
@@ -966,6 +1340,22 @@ function sourceLink(name, url) {
   return escapeHTML(name || "غير محدد");
 }
 
+/* تخزين محلي آمن */
+const store = {
+  get(key, fallback = null) {
+    try {
+      const raw = localStorage.getItem(key);
+      return raw == null ? fallback : JSON.parse(raw);
+    } catch { return fallback; }
+  },
+  set(key, value) {
+    try { localStorage.setItem(key, JSON.stringify(value)); } catch {}
+  },
+  del(key) {
+    try { localStorage.removeItem(key); } catch {}
+  }
+};
+
 /* مصر هي الدولة الافتراضية، مع تذكر اختيار الزائر */
 let currentCountry = "EG";
 
@@ -975,12 +1365,15 @@ try {
 } catch {}
 
 let data = null;
+let showingSaved = false;
 let currencyRates = {};
 let countdown = REFRESH_SECONDS;
 let controller = null;
 let requestId = 0;
 let busy = false;
 let nextRefreshAt = Date.now() + REFRESH_SECONDS * 1000;
+let favorites = store.get("nabd_fav_v1", []);
+if (!Array.isArray(favorites)) favorites = [];
 
 /* حالات البيانات */
 function sectionState(section, market = false) {
@@ -999,11 +1392,11 @@ function sectionState(section, market = false) {
   }
 
   if (/cached|stale/.test(raw)) {
-    return ["warning","قراءة محفوظة · تحذير"];
+    return ["note","قراءة محفوظة"];
   }
 
   if (/commercial|supplier/.test(raw)) {
-    return ["warning","مصدر تجاري · تحذير"];
+    return ["note","مصدر تجاري"];
   }
 
   if (
@@ -1012,8 +1405,8 @@ function sectionState(section, market = false) {
     section.warnings?.length
   ) {
     return [
-      "warning",
-      /fallback/.test(raw) ? "مصدر احتياطي · تحذير" : "تحذير"
+      "note",
+      /fallback/.test(raw) ? "مصدر احتياطي" : "بيانات مرجعية"
     ];
   }
 
@@ -1023,7 +1416,7 @@ function sectionState(section, market = false) {
     return ["official","مصدر رسمي"];
   }
 
-  return ["warning","حالة المصدر غير مؤكدة"];
+  return ["note","حالة المصدر غير مؤكدة"];
 }
 
 function usable(section, market = false) {
@@ -1072,17 +1465,19 @@ function sectionMeta(prefix, section, market = false) {
         escapeHTML(dateText(value)) + "</span>"
       ).join("");
 
-  const warnings = [
+  const notes = [
     section?.warning,
     ...(Array.isArray(section?.warnings) ? section.warnings : [])
-  ].filter(value => typeof value === "string");
+  ].filter(value => typeof value === "string")
+   .map(clean)
+   .filter(Boolean);
 
   $(prefix + "Notice").textContent =
     state[0] === "unavailable"
       ? "تعذر الحصول على البيانات. لا نعرض رقمًا بديلًا على أنه سعر اليوم."
-      : warnings.join(" · ") ||
+      : notes.join(" · ") ||
         (
-          state[0] === "warning"
+          state[0] === "note"
             ? "راجع المصدر وتاريخ السعر؛ توجد قيود أو بيانات احتياطية."
             : ""
         );
@@ -1091,7 +1486,32 @@ function sectionMeta(prefix, section, market = false) {
     !$(prefix + "Notice").textContent;
 }
 
-/* القائمة الجانبية */
+/* ===== الوضع الليلي والنهاري ===== */
+function applyTheme(theme, persist) {
+  document.documentElement.setAttribute("data-theme",theme);
+  $("themeColor").setAttribute(
+    "content", theme === "light" ? "#edf2f7" : "#050d17"
+  );
+  $("themeIcon").textContent = theme === "light" ? "🌙" : "☀️";
+  $("themeButton").setAttribute(
+    "aria-label",
+    theme === "light" ? "التحويل إلى الوضع الليلي" : "التحويل إلى الوضع النهاري"
+  );
+  if (persist) {
+    try { localStorage.setItem("nabd_theme",theme); } catch {}
+  }
+}
+
+applyTheme(document.documentElement.getAttribute("data-theme") || "dark",false);
+
+$("themeButton").addEventListener("click",() => {
+  const next =
+    document.documentElement.getAttribute("data-theme") === "light"
+      ? "dark" : "light";
+  applyTheme(next,true);
+});
+
+/* ===== القائمة الجانبية ===== */
 function openMenu() {
   $("drawer").classList.add("open");
   $("drawer").removeAttribute("inert");
@@ -1116,25 +1536,426 @@ $("menuButton").addEventListener("click",openMenu);
 $("closeMenu").addEventListener("click",closeMenu);
 $("overlay").addEventListener("click",closeMenu);
 
+const reduceMotion = () =>
+  matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function goTo(id) {
+  if (id === "home") {
+    window.scrollTo({top:0,behavior:reduceMotion() ? "auto" : "smooth"});
+    return;
+  }
+  const target = $(id);
+  if (!target) return;
+  target.scrollIntoView({behavior:reduceMotion() ? "auto" : "smooth"});
+  target.focus?.({preventScroll:true});
+}
+
 document.querySelectorAll(".drawer-link").forEach(link => {
-  link.addEventListener("click",() => {
+  link.addEventListener("click",event => {
+    event.preventDefault();
     closeMenu();
-
-    const target = document.querySelector(link.getAttribute("href"));
-
-    requestAnimationFrame(() => {
-      target?.scrollIntoView({
-        behavior:matchMedia("(prefers-reduced-motion: reduce)").matches
-          ? "auto"
-          : "smooth"
-      });
-
-      target?.focus({preventScroll:true});
-    });
+    const id = link.getAttribute("href").slice(1);
+    requestAnimationFrame(() => goTo(id));
   });
 });
 
+$("brandLink").addEventListener("click",event => {
+  event.preventDefault();
+  goTo("home");
+});
+
+$("drawerCalc").addEventListener("click",() => {
+  closeMenu();
+  openSheet("calcSheet");
+});
+
+$("drawerInstall").addEventListener("click",() => {
+  closeMenu();
+  installApp();
+});
+
+/* ===== الشريط السفلي ===== */
+document.querySelectorAll(".nav-item[data-target]").forEach(button => {
+  button.addEventListener("click",() => goTo(button.dataset.target));
+});
+
+$("navCalc").addEventListener("click",() => openSheet("calcSheet"));
+
+const navTargets = ["home","currencies","gold","fuel"];
+let navTick = false;
+
+function updateNav() {
+  navTick = false;
+  let current = "home";
+  const line = innerHeight * 0.35;
+
+  for (const id of navTargets) {
+    const element = $(id);
+    if (element && element.getBoundingClientRect().top <= line) current = id;
+  }
+
+  document.querySelectorAll(".nav-item[data-target]").forEach(button =>
+    button.classList.toggle("active",button.dataset.target === current)
+  );
+}
+
+addEventListener("scroll",() => {
+  if (!navTick) {
+    navTick = true;
+    requestAnimationFrame(updateNav);
+  }
+},{passive:true});
+
+addEventListener("resize",updateNav);
+
+/* إخفاء الشريط عند فتح لوحة المفاتيح */
+document.addEventListener("focusin",event => {
+  if (event.target.matches("input,select,textarea")) {
+    document.body.classList.add("kb");
+  }
+});
+
+document.addEventListener("focusout",() => {
+  setTimeout(() => {
+    if (!document.activeElement?.matches?.("input,select,textarea")) {
+      document.body.classList.remove("kb");
+    }
+  },80);
+});
+
+/* ===== النوافذ السفلية ===== */
+let sheetOpener = null;
+
+function openSheet(id) {
+  sheetOpener = document.activeElement;
+  $(id).hidden = false;
+  document.body.style.overflow = "hidden";
+  $(id).querySelector(".drawer-close")?.focus();
+  if (id === "calcSheet") renderCalc();
+}
+
+function closeSheets() {
+  ["calcSheet","installSheet"].forEach(id => { $(id).hidden = true; });
+  document.body.style.overflow = $("drawer").classList.contains("open") ? "hidden" : "";
+  sheetOpener?.focus?.();
+  sheetOpener = null;
+}
+
+$("calcClose").addEventListener("click",closeSheets);
+$("installClose").addEventListener("click",closeSheets);
+
+["calcSheet","installSheet"].forEach(id =>
+  $(id).addEventListener("click",event => {
+    if (event.target === $(id)) closeSheets();
+  })
+);
+
+/* ===== تثبيت التطبيق ===== */
+let deferredPrompt = null;
+
+const isStandalone = () =>
+  matchMedia("(display-mode: standalone)").matches ||
+  navigator.standalone === true;
+
+const isIOS = () =>
+  /iphone|ipad|ipod/i.test(navigator.userAgent) ||
+  (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+function refreshInstallUI() {
+  const hide = isStandalone();
+  $("installButton").hidden = hide;
+  $("drawerInstall").hidden = hide;
+}
+
+window.addEventListener("beforeinstallprompt",event => {
+  event.preventDefault();
+  deferredPrompt = event;
+  refreshInstallUI();
+});
+
+window.addEventListener("appinstalled",() => {
+  deferredPrompt = null;
+  refreshInstallUI();
+  closeSheets();
+});
+
+async function installApp() {
+  if (deferredPrompt) {
+    const promptEvent = deferredPrompt;
+    deferredPrompt = null;
+    try {
+      await promptEvent.prompt();
+      await promptEvent.userChoice;
+    } catch {}
+    refreshInstallUI();
+    return;
+  }
+
+  $("installBody").innerHTML = isIOS()
+    ? `<p>للتثبيت على iPhone أو iPad من متصفح Safari:</p>
+       <ol>
+         <li>اضغط زر المشاركة <b>⎋</b> في أسفل الشاشة.</li>
+         <li>اختر <b>إضافة إلى الشاشة الرئيسية</b>.</li>
+         <li>اضغط <b>إضافة</b>.</li>
+       </ol>`
+    : `<p>للتثبيت من المتصفح:</p>
+       <ol>
+         <li>افتح قائمة المتصفح (⋮ أو ⋯).</li>
+         <li>اختر <b>تثبيت التطبيق</b> أو <b>إضافة إلى الشاشة الرئيسية</b>.</li>
+         <li>أكّد الإضافة.</li>
+       </ol>
+       <p style="margin-top:10px">إذا لم يظهر الخيار، افتح الموقع من متصفح Chrome أو Edge أو Safari.</p>`;
+
+  openSheet("installSheet");
+}
+
+$("installButton").addEventListener("click",installApp);
+refreshInstallUI();
+
+/* ===== الآلة الحاسبة ===== */
+/*CALC_START*/
+function calcEvaluate(expr) {
+  let s = String(expr);
+
+  while (s && "+−×÷".includes(s.slice(-1))) s = s.slice(0,-1);
+
+  if (!s || s === "−") return null;
+
+  const tokens = [];
+  let number = "";
+  let negative = false;
+  let i = 0;
+
+  if (s[0] === "−") { negative = true; i = 1; }
+
+  const flush = () => {
+    if (number !== "") {
+      let value = parseFloat(number);
+      if (negative) { value = -value; negative = false; }
+      tokens.push({v:value,pct:false});
+      number = "";
+    }
+  };
+
+  for (; i < s.length; i++) {
+    const ch = s[i];
+
+    if (ch === "%") {
+      flush();
+      const last = tokens[tokens.length - 1];
+      if (!last || typeof last !== "object") return NaN;
+      last.v = last.v / 100;
+      last.pct = true;
+    } else if ("+−×÷".includes(ch)) {
+      flush();
+      tokens.push(ch);
+    } else {
+      number += ch;
+    }
+  }
+
+  flush();
+
+  if (tokens.length % 2 === 0) return NaN;
+
+  for (let k = 0; k < tokens.length; k++) {
+    if ((k % 2 === 0) !== (typeof tokens[k] === "object")) return NaN;
+    if (typeof tokens[k] === "object" && !Number.isFinite(tokens[k].v)) return NaN;
+  }
+
+  const stack = [{v:tokens[0].v,pct:tokens[0].pct}];
+
+  for (let k = 1; k < tokens.length; k += 2) {
+    const op = tokens[k];
+    const n = tokens[k + 1];
+    const last = stack[stack.length - 1];
+
+    if (op === "×") {
+      stack[stack.length - 1] = {v:last.v * n.v,pct:false};
+    } else if (op === "÷") {
+      if (n.v === 0) return Infinity;
+      stack[stack.length - 1] = {v:last.v / n.v,pct:false};
+    } else {
+      stack.push(op,n);
+    }
+  }
+
+  let result = stack[0].v;
+
+  for (let k = 1; k < stack.length; k += 2) {
+    const n = stack[k + 1];
+    const value = n.pct ? result * n.v : n.v;
+    result = stack[k] === "+" ? result + value : result - value;
+  }
+
+  return result;
+}
+
+function calcFormat(value) {
+  if (!Number.isFinite(value)) return "خطأ";
+
+  const rounded = parseFloat(value.toPrecision(12));
+  let text = String(rounded);
+
+  if (/e/i.test(text)) {
+    text = rounded.toLocaleString("en-US",{
+      maximumFractionDigits:10,
+      useGrouping:false
+    });
+  }
+
+  return text.replace(/^-/,"−");
+}
+/*CALC_END*/
+
+let cExpr = "";
+let cDone = false;
+let cError = false;
+let cHist = store.get("nabd_calc_hist_v1",[]);
+if (!Array.isArray(cHist)) cHist = [];
+cHist = cHist
+  .filter(item => item && typeof item.e === "string" && typeof item.r === "string")
+  .slice(0,5);
+
+function calcPress(key) {
+  if (cError) { cExpr = ""; cError = false; cDone = false; }
+
+  const isDigit = /^[0-9]$/.test(key);
+  const isOperator = "+−×÷".includes(key) && key.length === 1;
+
+  if (key === "AC") {
+    cExpr = ""; cDone = false;
+  } else if (key === "DEL") {
+    cExpr = cExpr.slice(0,-1); cDone = false;
+  } else if (isDigit || key === ".") {
+    if (cDone) { cExpr = ""; cDone = false; }
+
+    const segment = cExpr.split(/[+−×÷]/).pop();
+
+    if (key === "." && segment.includes(".")) return;
+    if (segment.endsWith("%")) return;
+
+    if (key === "." && (segment === "" || segment === "−")) {
+      cExpr += "0.";
+    } else if (segment === "0" && isDigit) {
+      cExpr = cExpr.slice(0,-1) + key;
+    } else {
+      cExpr += key;
+    }
+  } else if (isOperator) {
+    cDone = false;
+
+    if (cExpr === "") {
+      if (key === "−") cExpr = "−";
+      renderCalc();
+      return;
+    }
+
+    if (cExpr === "−") return;
+
+    if ("+−×÷".includes(cExpr.slice(-1))) {
+      cExpr = cExpr.slice(0,-1) + key;
+    } else {
+      cExpr += key;
+    }
+  } else if (key === "%") {
+    if (/[0-9%]$/.test(cExpr)) { cExpr += "%"; cDone = false; }
+  } else if (key === "=") {
+    let body = cExpr;
+    while (body && "+−×÷".includes(body.slice(-1))) body = body.slice(0,-1);
+
+    if (!body || !/[+−×÷%]/.test(body.slice(1))) return;
+
+    const result = calcEvaluate(body);
+
+    if (result === null) return;
+
+    if (!Number.isFinite(result)) {
+      cExpr = "";
+      cError = true;
+      cDone = false;
+    } else {
+      const text = calcFormat(result);
+      cHist.unshift({e:body,r:text});
+      cHist = cHist.slice(0,5);
+      store.set("nabd_calc_hist_v1",cHist);
+      cExpr = text;
+      cDone = true;
+    }
+  }
+
+  renderCalc();
+}
+
+function renderCalc() {
+  $("calcExpr").textContent = cError ? "خطأ" : (cExpr || "0");
+
+  let preview = "";
+
+  if (!cError && cExpr && !cDone && /[+−×÷%]/.test(cExpr.slice(1))) {
+    const value = calcEvaluate(cExpr);
+    if (value !== null && Number.isFinite(value)) {
+      preview = "= " + calcFormat(value);
+    }
+  }
+
+  $("calcPreview").textContent = preview;
+
+  /* الأقدم في الأعلى والأحدث قرب الشاشة */
+  $("calcHistory").innerHTML = cHist.length
+    ? [...cHist].reverse().map((item,index) =>
+        `<button type="button" data-r="${escapeHTML(item.r)}">${
+          escapeHTML(item.e)
+        } = ${escapeHTML(item.r)}</button>`
+      ).join("")
+    : '<div class="none">لا توجد عمليات سابقة</div>';
+}
+
+$("calcKeys").addEventListener("click",event => {
+  const button = event.target.closest("[data-k]");
+  if (button) calcPress(button.dataset.k);
+});
+
+$("calcHistory").addEventListener("click",event => {
+  const button = event.target.closest("[data-r]");
+  if (!button) return;
+  cExpr = button.dataset.r;
+  cDone = true;
+  cError = false;
+  renderCalc();
+});
+
+$("calcClearHistory").addEventListener("click",() => {
+  cHist = [];
+  store.del("nabd_calc_hist_v1");
+  renderCalc();
+});
+
 document.addEventListener("keydown",event => {
+  if (!$("calcSheet").hidden) {
+    const map = {
+      "*":"×","x":"×","X":"×","/":"÷","-":"−",",":".",
+      "Enter":"=","Backspace":"DEL","Delete":"AC","c":"AC","C":"AC"
+    };
+
+    if (event.key === "Escape") { closeSheets(); return; }
+
+    if (event.ctrlKey || event.metaKey || event.altKey) return;
+
+    const key = map[event.key] ?? event.key;
+
+    if (/^[0-9]$/.test(key) || ["+","−","×","÷",".","%","=","DEL","AC"].includes(key)) {
+      event.preventDefault();
+      calcPress(key);
+    }
+    return;
+  }
+
+  if (!$("installSheet").hidden && event.key === "Escape") {
+    closeSheets();
+    return;
+  }
+
   if (!$("drawer").classList.contains("open")) return;
 
   if (event.key === "Escape") {
@@ -1145,7 +1966,7 @@ document.addEventListener("keydown",event => {
   if (event.key === "Tab") {
     const elements = [
       ...$("drawer").querySelectorAll("a[href],button")
-    ];
+    ].filter(element => !element.hidden);
 
     const first = elements[0];
     const last = elements[elements.length - 1];
@@ -1159,6 +1980,119 @@ document.addEventListener("keydown",event => {
     }
   }
 });
+
+/* ===== العملات: قائمة وبحث ومفضلة ===== */
+let displayNames = null;
+try { displayNames = new Intl.DisplayNames(["ar"],{type:"currency"}); } catch {}
+
+function currencyInfo(code) {
+  if (CURRENCY_META[code]) return CURRENCY_META[code];
+
+  let name = code;
+  try { name = displayNames?.of(code) || code; } catch {}
+
+  return [name,EXTRA_FLAGS[code] || "💱"];
+}
+
+function currencyCodes() {
+  const extras = Object.keys(currencyRates)
+    .filter(code => !CURRENCY_META[code])
+    .sort();
+
+  return [...TRACKED_CURRENCIES,...extras];
+}
+
+function renderCurrencies() {
+  const meta = COUNTRY_META[currentCountry];
+  const fx = data?.fx;
+  const term = $("currencySearch").value.trim().toLowerCase();
+
+  let codes = currencyCodes().filter(code => {
+    if (!term) return true;
+    const [name] = currencyInfo(code);
+    return code.toLowerCase().includes(term) || name.toLowerCase().includes(term);
+  });
+
+  const rank = code => favorites.includes(code) ? 0 : 1;
+  codes = codes
+    .map((code,index) => ({code,index}))
+    .sort((a,b) => rank(a.code) - rank(b.code) || a.index - b.index)
+    .map(item => item.code);
+
+  $("currencyGrid").innerHTML = codes.length
+    ? codes.map(code => {
+        const [name,flag] = currencyInfo(code);
+        const detail = fx?.rateDetails?.[code];
+        const on = favorites.includes(code);
+
+        return `
+          <div class="currency-card">
+            <button type="button" class="fav-button ${on ? "on" : ""}"
+                    data-fav="${code}"
+                    aria-label="${on ? "إزالة من المفضلة" : "إضافة إلى المفضلة"}"
+                    aria-pressed="${on}">${on ? "★" : "☆"}</button>
+            <div class="currency-flag">${flag}</div>
+            <div class="currency-info">
+              <div class="currency-name">${escapeHTML(name)}</div>
+              <div class="currency-code">1 ${code} · بالـ${meta.currency}</div>
+              <div class="currency-code">
+                ${
+                  sourceLink(
+                    detail?.source || fx?.sourceShort || "—",
+                    detail?.url || fx?.sourceUrl
+                  )
+                }
+                · ${escapeHTML(dateText(detail?.date))}
+              </div>
+            </div>
+            <div class="currency-price">
+              ${money(currencyRates[code],meta.symbol,6)}
+            </div>
+          </div>
+        `;
+      }).join("")
+    : '<div class="empty-state">لا توجد عملة مطابقة للبحث</div>';
+}
+
+$("currencySearch").addEventListener("input",renderCurrencies);
+
+$("currencyGrid").addEventListener("click",event => {
+  const button = event.target.closest("[data-fav]");
+  if (!button) return;
+
+  const code = button.dataset.fav;
+
+  favorites = favorites.includes(code)
+    ? favorites.filter(item => item !== code)
+    : [...favorites,code];
+
+  store.set("nabd_fav_v1",favorites);
+  renderCurrencies();
+});
+
+function rebuildConverterOptions() {
+  const previousFrom = $("fromCurrency").value;
+  const previousTo = $("toCurrency").value;
+
+  const codes = currencyCodes().filter(code => valid(currencyRates[code]));
+  const list = codes.length ? codes : TRACKED_CURRENCIES;
+
+  const html = list.map(code => {
+    const [name,flag] = currencyInfo(code);
+    return `<option value="${code}">${flag} ${code} — ${escapeHTML(name)}</option>`;
+  }).join("");
+
+  if ($("fromCurrency").dataset.sig === html) return;
+
+  $("fromCurrency").innerHTML = html;
+  $("toCurrency").innerHTML = html;
+  $("fromCurrency").dataset.sig = html;
+
+  const localCode = COUNTRY_META[currentCountry].currency;
+
+  $("fromCurrency").value = list.includes(previousFrom) ? previousFrom : "USD";
+  $("toCurrency").value = list.includes(previousTo) ? previousTo : localCode;
+}
 
 /* تحويل العملات */
 function calculateConversion() {
@@ -1191,20 +2125,59 @@ function calculateConversion() {
     amount.toLocaleString("en-US",{maximumFractionDigits:4}) +
     " " + from + " = " +
     result.toLocaleString("en-US",{maximumFractionDigits:6}) +
-    " " + to +
-    (
-      sectionState(data?.fx)[0] === "warning"
-        ? " · بيانات عليها تحذير"
-        : ""
-    );
+    " " + to;
 }
 
-/* عرض البيانات */
+/* ===== حاسبة الذهب ===== */
+function goldCalc() {
+  const meta = COUNTRY_META[currentCountry];
+  const gold = usable(data?.metals,true) ? data.metals.gold || {} : {};
+
+  $("gcCur").textContent = meta.symbol;
+
+  const weight = Number($("gcWeight").value);
+  const making = Number($("gcMaking").value || 0);
+  const karat = $("gcKarat").value;
+  const price = gold["k" + karat];
+
+  if (!Number.isFinite(weight) || weight <= 0) {
+    $("gcResult").textContent = "أدخل وزنًا صالحًا بالجرام";
+    return;
+  }
+
+  if (!Number.isFinite(making) || making < 0) {
+    $("gcResult").textContent = "أدخل مصنعية صالحة";
+    return;
+  }
+
+  if (!valid(price)) {
+    $("gcResult").textContent = "سعر الذهب غير متاح الآن";
+    return;
+  }
+
+  const metal = weight * Number(price);
+  const fee = weight * making;
+
+  $("gcResult").innerHTML =
+    escapeHTML(money(metal + fee,meta.symbol,2)) +
+    `<small>قيمة الذهب ${escapeHTML(money(metal,meta.symbol,2))}` +
+    ` + مصنعية ${escapeHTML(fee > 0 ? money(fee,meta.symbol,2) : "0 " + meta.symbol)}` +
+    ` · سعر الجرام ${escapeHTML(money(price,meta.symbol,2))}</small>`;
+}
+
+["gcWeight","gcKarat","gcMaking"].forEach(id => {
+  $(id).addEventListener("input",goldCalc);
+  $(id).addEventListener("change",goldCalc);
+});
+
+/* ===== عرض البيانات ===== */
 function render() {
   const meta = COUNTRY_META[currentCountry];
   const fx = data?.fx;
   const metals = data?.metals;
   const fuel = data?.fuel;
+
+  document.body.classList.toggle("loading",busy && !data);
 
   currencyRates = {};
 
@@ -1214,50 +2187,38 @@ function render() {
         currencyRates[code] = Number(fx.rates[code]);
       }
     }
+
+    for (const [code,rate] of Object.entries(fx.rates || {})) {
+      if (/^[A-Z]{3}$/.test(code) && !currencyRates[code] && valid(rate)) {
+        currencyRates[code] = Number(rate);
+      }
+    }
+
+    if (!valid(currencyRates[meta.currency])) {
+      currencyRates[meta.currency] = 1;
+    }
   }
 
   const gold = usable(metals,true) ? metals.gold || {} : {};
   const silver = usable(metals,true) ? metals.silver || {} : {};
 
+  const saved = showingSaved ? " · محفوظ" : "";
+
   $("quickFxState").textContent =
-    "بالعملة المحلية · " + sectionState(fx)[1];
+    "بالعملة المحلية · " + sectionState(fx)[1] + saved;
 
   $("quickGoldState").textContent =
-    "سعر الجرام · " + sectionState(metals,true)[1];
+    "سعر الجرام · " + sectionState(metals,true)[1] + saved;
 
   $("quickUsd").textContent = money(currencyRates.USD,meta.symbol);
   $("quickEur").textContent = money(currencyRates.EUR,meta.symbol);
   $("quickGold").textContent = money(gold.k21,meta.symbol,2);
 
   $("summarySource").textContent =
-    meta.name + " · " + sectionState(fx)[1];
+    meta.name + " · " + sectionState(fx)[1] + saved;
 
-  $("currencyGrid").innerHTML = TRACKED_CURRENCIES.map(code => {
-    const [name,flag] = CURRENCY_META[code];
-    const detail = fx?.rateDetails?.[code];
-
-    return `
-      <div class="currency-card">
-        <div class="currency-flag">${flag}</div>
-        <div class="currency-info">
-          <div class="currency-name">${name}</div>
-          <div class="currency-code">1 ${code} · بالـ${meta.currency}</div>
-          <div class="currency-code">
-            ${
-              sourceLink(
-                detail?.source || fx?.sourceShort || "—",
-                detail?.url || fx?.sourceUrl
-              )
-            }
-            · ${escapeHTML(dateText(detail?.date))}
-          </div>
-        </div>
-        <div class="currency-price">
-          ${money(currencyRates[code],meta.symbol,6)}
-        </div>
-      </div>
-    `;
-  }).join("");
+  renderCurrencies();
+  rebuildConverterOptions();
 
   for (const karat of [24,22,21,18]) {
     $("gold" + karat).textContent =
@@ -1267,6 +2228,33 @@ function render() {
   $("goldOunce").textContent = money(gold.usdPerOz,"USD",2);
   $("silverGram").textContent = money(silver.localPerGram,meta.symbol,2);
   $("silverOunce").textContent = money(silver.usdPerOz,"USD",2);
+
+  /* معادن إضافية إن أرسلها المزود */
+  const extraList = [
+    ["platinum","البلاتين","🔘","XPT"],
+    ["palladium","البالاديوم","🔘","XPD"]
+  ].filter(([key]) => {
+    const item = usable(metals,true) ? metals[key] : null;
+    return item && (valid(item.localPerGram) || valid(item.usdPerOz));
+  });
+
+  $("extraMetals").hidden = !extraList.length;
+  $("extraMetals").innerHTML = extraList.map(([key,name,icon,code]) => {
+    const item = metals[key];
+    return `
+      <div class="card">
+        <div class="card-top">
+          <div class="card-icon">${icon}</div>
+          <div class="card-code">${code}</div>
+        </div>
+        <div class="card-name">${name} · الجرام</div>
+        <div class="card-value">${money(item.localPerGram,meta.symbol,2)}</div>
+        <div class="card-sub">الأونصة: ${money(item.usdPerOz,"USD",2)}</div>
+      </div>
+    `;
+  }).join("");
+
+  goldCalc();
 
   const order = ["80","91","92","95","98","DSL","KER"];
 
@@ -1353,7 +2341,7 @@ function render() {
     ).join("") +
     (
       fuel?.selectionReason
-        ? "<span>" + escapeHTML(fuel.selectionReason) + "</span>"
+        ? "<span>" + escapeHTML(clean(fuel.selectionReason)) + "</span>"
         : ""
     );
 
@@ -1431,7 +2419,54 @@ function render() {
   calculateConversion();
 }
 
-/* الاتصال بالووركر */
+/* ===== الأسعار المحفوظة للعرض دون اتصال ===== */
+const cacheKey = country => "nabd_cache_v1_" + country;
+
+function loadCache(country) {
+  const entry = store.get(cacheKey(country));
+  if (
+    entry && entry.data && entry.data.country === country &&
+    entry.data.fx && entry.data.metals && entry.data.fuel &&
+    Number.isFinite(entry.savedAt)
+  ) return entry;
+  return null;
+}
+
+function saveCache(country, result) {
+  store.set(cacheKey(country),{savedAt:Date.now(),data:result});
+}
+
+const stamp = ms =>
+  new Intl.DateTimeFormat("ar-EG",{
+    dateStyle:"medium",
+    timeStyle:"short"
+  }).format(new Date(ms));
+
+/* ===== مشاركة واتساب ===== */
+$("shareButton").addEventListener("click",() => {
+  const meta = COUNTRY_META[currentCountry];
+  const gold = usable(data?.metals,true) ? data.metals.gold || {} : {};
+  const lines = ["📊 نبض الاقتصاد — " + meta.name];
+
+  if (valid(currencyRates.USD)) {
+    lines.push("💵 الدولار: " + money(currencyRates.USD,meta.symbol,4));
+  }
+  if (valid(currencyRates.EUR)) {
+    lines.push("💶 اليورو: " + money(currencyRates.EUR,meta.symbol,4));
+  }
+  if (valid(gold.k21)) {
+    lines.push("🥇 ذهب عيار 21: " + money(gold.k21,meta.symbol,2));
+  }
+
+  lines.push("الأسعار استرشادية.","",SITE_URL);
+
+  window.open(
+    "https://wa.me/?text=" + encodeURIComponent(lines.join("\n")),
+    "_blank","noopener,noreferrer"
+  );
+});
+
+/* ===== الاتصال بالووركر ===== */
 async function refreshAll() {
   const id = ++requestId;
 
@@ -1448,8 +2483,11 @@ async function refreshAll() {
   $("statusBadge").className = "source-label market";
   $("connectionNotice").hidden = true;
 
-  /* منع بقاء أسعار دولة سابقة أثناء تحميل الدولة الجديدة */
-  data = null;
+  /* عرض آخر أسعار محفوظة لنفس الدولة فورًا، ولا نعرض أسعار دولة سابقة */
+  const cached = loadCache(country);
+  data = cached ? cached.data : null;
+  showingSaved = !!cached;
+  $("lastSuccess").textContent = cached ? stamp(cached.savedAt) : "—";
   render();
 
   const timer = setTimeout(() => ownController.abort(),60000);
@@ -1482,6 +2520,9 @@ async function refreshAll() {
     if (id !== requestId) return;
 
     data = result;
+    showingSaved = false;
+    saveCache(country,result);
+    $("lastSuccess").textContent = stamp(Date.now());
     render();
 
     const partial = [
@@ -1489,38 +2530,61 @@ async function refreshAll() {
       sectionState(data.metals,true),
       sectionState(data.fuel)
     ].some(state =>
-      ["warning","unavailable"].includes(state[0])
+      ["note","unavailable"].includes(state[0])
     );
 
     $("statusText").textContent = partial
       ? "تم الفحص · راجع حالات الأقسام"
       : "تم استلام البيانات";
 
-    $("statusBadge").textContent = partial ? "تنبيه" : "متصل";
+    $("statusBadge").textContent = "متصل";
     $("statusBadge").className =
-      "source-label " + (partial ? "warning" : "official");
+      "source-label " + (partial ? "note" : "official");
 
   } catch (error) {
     if (id !== requestId) return;
 
     busy = false;
-    data = null;
+
+    const fallback = loadCache(country);
+
+    data = fallback ? fallback.data : null;
+    showingSaved = !!fallback;
     render();
 
-    $("statusText").textContent = "تعذر تحميل البيانات";
-    $("statusBadge").textContent = "غير متاح";
-    $("statusBadge").className = "source-label unavailable";
+    $("statusText").textContent = fallback
+      ? "تعذر التحديث · تُعرض آخر أسعار محفوظة"
+      : "تعذر تحميل البيانات";
+
+    $("statusBadge").textContent = fallback ? "محفوظ" : "غير متاح";
+    $("statusBadge").className =
+      "source-label " + (fallback ? "note" : "unavailable");
+
     $("connectionNotice").hidden = false;
 
-    $("connectionNotice").textContent = error.message === "schema"
-      ? "صيغة استجابة المزود غير متوقعة؛ راجع اتصال الموقع بالـWorker."
-      : "تعذر الاتصال بمزود الأسعار. حاول التحديث مجددًا.";
+    const offline = navigator.onLine === false;
+
+    $("connectionNotice").textContent =
+      (
+        error.message === "schema"
+          ? "صيغة استجابة المزود غير متوقعة؛ راجع اتصال الموقع بالـWorker."
+          : offline
+            ? "أنت غير متصل بالإنترنت."
+            : "تعذر الاتصال بمزود الأسعار."
+      ) +
+      (
+        fallback
+          ? " تُعرض آخر أسعار محفوظة على جهازك بتاريخ " +
+            stamp(fallback.savedAt) + "."
+          : " حاول التحديث مجددًا."
+      );
 
   } finally {
     clearTimeout(timer);
 
     if (id === requestId) {
       busy = false;
+      document.body.classList.toggle("loading",false);
       nextRefreshAt = Date.now() + REFRESH_SECONDS * 1000;
       countdown = REFRESH_SECONDS;
 
@@ -1537,14 +2601,14 @@ async function refreshAll() {
 }
 
 /* بدء التشغيل */
-const options = TRACKED_CURRENCIES.map(code =>
+const baseOptions = TRACKED_CURRENCIES.map(code =>
   `<option value="${code}">
     ${CURRENCY_META[code][1]} ${code} — ${CURRENCY_META[code][0]}
   </option>`
 ).join("");
 
-$("fromCurrency").innerHTML = options;
-$("toCurrency").innerHTML = options;
+$("fromCurrency").innerHTML = baseOptions;
+$("toCurrency").innerHTML = baseOptions;
 $("fromCurrency").value = "USD";
 $("toCurrency").value = COUNTRY_META[currentCountry].currency;
 $("countrySelect").value = currentCountry;
@@ -1603,6 +2667,15 @@ window.addEventListener("online",() => {
 
 $("copyrightYear").textContent = new Date().getFullYear();
 
+/* Service Worker للتثبيت والعمل دون اتصال */
+if ("serviceWorker" in navigator && /^https?:$/.test(location.protocol)) {
+  window.addEventListener("load",() => {
+    navigator.serviceWorker.register("./sw.js").catch(() => {});
+  });
+}
+
+updateNav();
+renderCalc();
 refreshAll();
 </script>
 </body>
